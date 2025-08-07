@@ -1,0 +1,26 @@
+{{- /* 加载自定义CSS */ -}}
+{{- $customCSS := resources.Get "css/custom.css" -}}
+{{- if $customCSS -}}
+  {{- $customCSS := $customCSS | resources.Minify -}}
+  <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}" media="print" onload="this.media='all'">
+{{- end -}}
+
+{{- /* 添加网站图标 */ -}}
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+{{- /* 添加结构化数据 */ -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Keaton",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "sameAs": [
+    "https://github.com/Lan-Keeting"
+  ]
+}
+</script> 

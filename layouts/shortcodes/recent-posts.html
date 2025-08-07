@@ -1,0 +1,85 @@
+{{- $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" }}
+{{- $pages = $pages | first 5 }}
+
+<div class="recent-posts">
+  {{- range $pages }}
+  <article class="recent-post">
+    <header class="entry-header">
+      <h3 class="entry-title">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+    </header>
+    <div class="entry-content">
+      <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    </div>
+    <footer class="entry-footer">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        {{ .Date.Format "2006-01-02" }}
+      </time>
+      {{- if .Params.tags }}
+      <span class="tags">
+        {{- range .Params.tags }}
+        <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">#{{ . }}</a>
+        {{- end }}
+      </span>
+      {{- end }}
+    </footer>
+  </article>
+  {{- end }}
+</div>
+
+<style>
+.recent-posts {
+  margin: 2rem 0;
+}
+
+.recent-post {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.recent-post:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.recent-post .entry-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.recent-post .entry-title a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.recent-post .entry-title a:hover {
+  color: var(--content);
+}
+
+.recent-post .entry-content {
+  margin: 0.5rem 0;
+  color: var(--secondary);
+  font-size: 0.9rem;
+}
+
+.recent-post .entry-footer {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--tertiary);
+}
+
+.recent-post .tags a {
+  color: var(--tertiary);
+  text-decoration: none;
+  margin-left: 0.5rem;
+}
+
+.recent-post .tags a:hover {
+  color: var(--primary);
+}
+</style> 

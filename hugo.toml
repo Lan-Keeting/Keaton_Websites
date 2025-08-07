@@ -1,0 +1,120 @@
+baseURL = "https://lan-keeting.github.io/New_World_Keaton/"
+languageCode = "zh-CN"
+title = "Keaton 的世界"
+theme = "PaperMod"
+
+description = "Keaton 的个人学习、成长与想法网站，基于 Hugo Papermod 主题构建。"
+
+# Markup配置 - 允许不安全的HTML渲染
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# SEO 优化
+[params]
+  disableThemeToggle = false
+  searchEnable = true
+  searchScope = ["content"]
+  disableShareButtons = false
+  showReadingTime = true
+  dateFormat = "2006-01-02"
+  showAboutPage = true
+  mainSections = ["guide"]  # 设置主要内容区域
+  keywords = ["学习笔记", "成长感悟", "AI学习", "社会医学", "个人博客"]
+  robotsNoIndex = false
+  robotsNoFollow = false
+  
+  # 社交媒体配置
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/Lan-Keeting"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:your-email@example.com"
+    
+  # 代码高亮
+  [params.highlight]
+    noClasses = false
+    noHl = false
+    style = "github"
+    
+  # 评论系统（可选）
+  # [params.comments]
+  #   enabled = true
+  #   provider = "utterances"
+  #   repo = "your-username/your-repo"
+
+# 自定义CSS
+[params.assets]
+  favicon = "<link / >"
+  favicon16x16 = "<link / >"
+  favicon32x32 = "<link / >"
+  apple_touch_icon = "<link / >"
+  safari_pinned_tab = "<link / >"
+
+# 分页设置
+[pagination]
+  pagerSize = 5
+
+# [params.homeInfoParams]
+#   Title = "欢迎来到 Keaton 的世界"
+#   Content = "这里记录我的学习心得、成长故事与灵感想法。祝你有美好的一天！"
+
+[params.author]
+  name = "Keaton"
+  homepage = "https://github.com/Lan-Keeting"
+  image = "/images/avatar.jpg"  # 添加头像
+
+# [[params.social]]
+#   icon = "github"
+#   url = "https://github.com/Lan-Keeting"
+
+# ---------- 菜单导航 ----------
+[[menu.main]]
+  identifier = "home"
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  identifier = "guide"
+  name = "成长之路"
+  url = "/guide/"
+  weight = 2
+
+[[menu.main]]
+  parent = "guide"
+  name = "领域学习"
+  url = "/guide/learning/"
+  weight = 1
+
+[[menu.main]]
+  parent = "guide"
+  name = "成长感悟"
+  url = "/guide/reflection/"
+  weight = 2
+
+[[menu.main]]
+  parent = "guide"
+  name = "阅读记录"
+  url = "/guide/reading/"
+  weight = 3
+
+[[menu.main]]
+  parent = "guide"
+  name = "喜爱的事物"
+  url = "/guide/favorites/"
+  weight = 4
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 3
+
+# 分类和标签页面
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"

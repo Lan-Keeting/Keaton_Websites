@@ -1,0 +1,97 @@
+{{- $totalPosts := len .Site.RegularPages -}}
+{{- $totalTags := len .Site.Taxonomies.tags -}}
+{{- $totalCategories := len .Site.Taxonomies.categories -}}
+
+<div class="site-stats">
+  <div class="stat-item">
+    <span class="stat-icon">📝</span>
+    <span class="stat-value">{{ $totalPosts }}</span>
+    <span class="stat-label">文章</span>
+  </div>
+  
+  <div class="stat-item">
+    <span class="stat-icon">🏷️</span>
+    <span class="stat-value">{{ $totalTags }}</span>
+    <span class="stat-label">标签</span>
+  </div>
+  
+  <div class="stat-item">
+    <span class="stat-icon">📂</span>
+    <span class="stat-value">{{ $totalCategories }}</span>
+    <span class="stat-label">分类</span>
+  </div>
+</div>
+
+<style>
+.site-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  min-width: 80px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  color: var(--secondary);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .site-stats {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .stat-item {
+    min-width: 60px;
+    padding: 0.75rem;
+  }
+  
+  .stat-icon {
+    font-size: 1.2rem;
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.8rem;
+  }
+}
+</style> 
