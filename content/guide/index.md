@@ -2,6 +2,8 @@
 title: "成长之路"
 date: 2025-01-27T12:00:00+08:00
 draft: false
+ShowReadingTime: false
+hideAuthor: true
 ---
 
 # 🌱 成长之路

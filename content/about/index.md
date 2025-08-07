@@ -2,6 +2,8 @@
 title: "关于 Keaton"
 date: 2025-08-07T12:00:00+08:00
 draft: false
+ShowReadingTime: false
+hideAuthor: true
 ---
 
 # 关于 Keaton
