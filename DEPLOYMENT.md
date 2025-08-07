@@ -3,7 +3,7 @@
 ## 🚀 部署到 GitHub Pages
 
 ### 步骤 1: 创建 GitHub 仓库
-1. 在 GitHub 上创建一个新的仓库，命名为 `New_World_Keaton`
+1. 在 GitHub 上创建一个新的仓库，命名为 `Keaton_Websites`
 2. 确保仓库是公开的（public）
 
 ### 步骤 2: 使用 GitHub Desktop 上传
@@ -35,7 +35,7 @@
 ## 🌐 访问网站
 
 部署完成后，您的网站将可以通过以下地址访问：
-**https://lan-keeting.github.io/New_World_Keaton/**
+**https://lan-keeting.github.io/Keaton_Websites/**
 
 ## 📝 后续更新
 

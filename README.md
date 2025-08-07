@@ -39,7 +39,7 @@ hugo server --bind 0.0.0.0 --port 1314
 
 ## 🌐 在线访问
 
-网站地址：https://lan-keeting.github.io/New_World_Keaton/
+网站地址：https://lan-keeting.github.io/Keaton_Websites/
 
 ## 📁 项目结构
 
@@ -73,7 +73,7 @@ MIT License
 ## 🤝 联系方式
 
 - GitHub: [@Lan-Keeting](https://github.com/Lan-Keeting)
-- 网站: https://lan-keeting.github.io/New_World_Keaton/
+- 网站: https://lan-keeting.github.io/Keaton_Websites/
 
 ---
 
