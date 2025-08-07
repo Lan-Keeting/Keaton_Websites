@@ -1,10 +1,36 @@
+{{- /* 缓存控制 */ -}}
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
 {{- /* 加载自定义CSS */ -}}
 {{- $customCSS := resources.Get "css/custom.css" -}}
 {{- if $customCSS -}}
   {{- $customCSS := $customCSS | resources.Minify -}}
-  <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}">
+  <link rel="stylesheet" href="{{ $customCSS.RelPermalink }}?v={{ now.Unix }}">
 {{- end -}}
-<link rel="stylesheet" href="/css/custom.css">
+<link rel="stylesheet" href="/css/custom.css?v={{ now.Unix }}">
+
+{{- /* 强制刷新 CSS 脚本 */ -}}
+<script>
+// 强制刷新 CSS 文件
+function reloadCSS() {
+  const links = document.querySelectorAll('link[rel="stylesheet"]');
+  links.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && (href.includes('custom.css') || href.includes('css'))) {
+      if (!href.includes('?v=')) {
+        link.setAttribute('href', href + '?v=' + Date.now());
+      }
+    }
+  });
+}
+
+// 页面加载时执行
+window.addEventListener('load', function() {
+  setTimeout(reloadCSS, 100);
+});
+</script>
 
 {{- /* 添加网站图标 */ -}}
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
