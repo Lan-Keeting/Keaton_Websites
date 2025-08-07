@@ -5,7 +5,7 @@
   </h2>
   
   <div class="vision-container">
-    <img src="images/vision.jpg" alt="Keaton's Vision" class="vision-image">
+    <img src="{{ .Site.BaseURL }}images/vision.jpg" alt="Keaton's Vision" class="vision-image" onerror="console.log('Image failed to load:', this.src); this.style.display='none';">
     <div class="vision-quote">
       <blockquote>
         灵感来自生活，记录来自思考。
