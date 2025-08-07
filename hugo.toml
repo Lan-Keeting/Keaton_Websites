@@ -47,11 +47,8 @@ description = "Keaton 的个人学习、成长与想法网站，基于 Hugo Pape
 
 # 自定义CSS
 [params.assets]
-  favicon = "<link / >"
-  favicon16x16 = "<link / >"
-  favicon32x32 = "<link / >"
-  apple_touch_icon = "<link / >"
-  safari_pinned_tab = "<link / >"
+  favicon = "avatar.jpg"
+  apple_touch_icon = "avatar.jpg"
 
 # 分页设置
 [pagination]
