@@ -10,8 +10,6 @@ ShowToc: false
 hideMeta: true
 ---
 
-# 关于 Keaton
-
 你好！我是 Keaton，这是我的个人学习成长网站。
 
 我希望通过这个平台，记录和分享我的学习笔记、成长经历以及灵感想法。
